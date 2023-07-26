@@ -1,6 +1,7 @@
 import 'package:development/CustomWidgets/app_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../Utils/app_color.dart';
 import 'CustomSliceWidget.dart';
@@ -10,7 +11,7 @@ class ContestEntryCard extends StatelessWidget {
   final Duration timeRemaining;
   final int entriesLeft;
   final int totalEntries;
-  final double entryMoney;
+  final int entryMoney;
   final Function() onEntryButtonPressed;
 
   ContestEntryCard({
@@ -38,12 +39,18 @@ class ContestEntryCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    child: AppText(
-                      "₹ "+ priceMoney,
-                      style: TextStyle(
-                        fontSize: 26,
-                        fontWeight: FontWeight.bold,
-                      ),textColor: appColorWhite,
+                    child: Row(
+                      children: [
+                        SvgPicture.asset('assets/GameButton/trophy.svg'),
+                        SizedBox(width: 4,),
+                        AppText(
+                          "₹ "+ priceMoney,
+                          style: TextStyle(
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold,
+                          ),textColor: appColorWhite,
+                        ),
+                      ],
                     ),
                   ),
                   SizedBox(height: 9),
@@ -141,7 +148,7 @@ class ContestEntryCard extends StatelessWidget {
                     children: [
                       SizedBox(width: 4,),
                       Container(
-                          padding: EdgeInsets.only(top: 4),
+                          padding: EdgeInsets.only(top: 3),
                           child: Icon(CupertinoIcons.clock,size: 14,color: appColorWhite,)),
                       SizedBox(width: 4,),
                       Text(

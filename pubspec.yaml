@@ -63,6 +63,8 @@ flutter:
   assets:
     - assets/GameButton/image1.png
     - assets/GameButton/reward.png
+    - assets/GameButton/trophy.svg
+    - assets/GameButton/fruit.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

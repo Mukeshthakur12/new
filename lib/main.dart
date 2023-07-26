@@ -4,6 +4,7 @@ import 'package:development/CustomWidgets/reward_custom_card.dart';
 import 'package:flutter/material.dart';
 
 import 'CustomWidgets/CustomSliceWidget.dart';
+import 'CustomWidgets/TournmentCardwidget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
            GameButtonCard(imageUrl: 'assets/GameButton/image1.png', buttonText: 'True or False', onPressed: (){
 
            }),
-            RewardCardWidget(imageUrl: 'imageUrl', title: 'title', description: 'description', initialDuration:  Duration(seconds: 5)),
+            // RewardCardWidget(imageUrl: 'imageUrl', title: 'title', description: 'description', initialDuration:  Duration(seconds: 5)),
             CustomRewardWidget(
               imageUrl: "assets/GameButton/reward.png",
               title: 'Daily Games',
@@ -62,7 +63,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 entriesLeft: 5,
                 totalEntries: 30,
                 entryMoney: 20,
-                onEntryButtonPressed: (){})
+                onEntryButtonPressed: (){}),
+            TournmentCard(priceMoney: '30000',
+                timeRemaining: Duration(minutes: 10),
+                entriesLeft: 5,
+                totalEntries: 30,
+                entryMoney: 20,
+                onEntryButtonPressed: (){}),
           ],
         ),
       ),
