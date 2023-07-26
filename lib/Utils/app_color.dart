@@ -10,6 +10,7 @@ const Color appColorGreen = Color(0xFF3AF384);
 const Color appColorGreen1 = Color(0xFF00D092);
 const Color containercolor = Color(0xFFFFFFFF);
 const Color appColorBlack = Color(0xFF000000);
+const Color appBgColor = Color(0xFF18002E);
 
 
 const Color appTimeColor = Color(0xFF472751);
@@ -17,4 +18,6 @@ const Color appCardColor = Color(0xFF300126);
 const Color appContestCardColor = Color(0xFF37001F);
 const Color appLabelColor = Color(0xFFA58CA8);
 const Color appborderColor = Color(0xFF240044);
+const Color navbarActivecollor = Color(0xFFF9DB66);
+const Color buttonBgColor = Color(0xFFF44284C);
 

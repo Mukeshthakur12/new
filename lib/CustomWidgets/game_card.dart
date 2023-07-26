@@ -22,7 +22,7 @@ class GameButtonCard extends StatelessWidget {
       ),
       child: Container(
         height: 105,
-        width: 115,
+        width: 100,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           color: appPrimaryColor,
@@ -52,7 +52,7 @@ class GameButtonCard extends StatelessWidget {
                   ),
                   child: Text(
                     buttonText,
-                    style: TextStyle(color: Colors.white, fontSize: 14,fontWeight: FontWeight.w700),
+                    style: TextStyle(color: Colors.white, fontSize: 12,fontWeight: FontWeight.w700),
                     textAlign: TextAlign.center,
                   ),
                 ),

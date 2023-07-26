@@ -138,12 +138,12 @@ class _CustomRewardWidgetState extends State<CustomRewardWidget> {
                 },
                 child: Row(
                   children: [
-                    Text('Get',style:
+                    Text('View',style:
                     TextStyle(color:appColorWhite,
                         fontSize: 14,fontWeight: FontWeight.w600)
                         ,),
                     Padding(
-                        padding: EdgeInsets.only(top: 2,left: 2),
+                        padding: EdgeInsets.only(top: 2,left: 4),
                         child: Icon(CupertinoIcons.chevron_right_circle,color:appColorWhite,size: 14,))
                   ],
                 ),
