@@ -18,3 +18,9 @@ const Color appContestCardColor = Color(0xFF37001F);
 const Color appLabelColor = Color(0xFFA58CA8);
 const Color appborderColor = Color(0xFF240044);
 
+const Color referbackground = Color(0xFF9747FF);
+
+//wallet
+const Color walletcard = Color(0xFF311939);
+
+
