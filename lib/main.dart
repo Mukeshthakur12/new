@@ -1,6 +1,7 @@
 import 'package:development/CustomWidgets/ContesEntryCard.dart';
 import 'package:development/CustomWidgets/game_card.dart';
 import 'package:development/CustomWidgets/reward_custom_card.dart';
+import 'package:development/Screens/RaferandEarn.dart';
 import 'package:flutter/material.dart';
 
 import 'CustomWidgets/CustomSliceWidget.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  TransactionScreen(),
+      home:  Refer(),
     );
   }
 }

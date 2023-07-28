@@ -22,11 +22,21 @@ const Color referbackground = Color(0xFF9747FF);
 
 //wallet
 const Color walletcard = Color(0xFF311939);
-//
+const Color walletdivider=Color(0xff371D3E);
+
+//profile
 const Color profilerimgeboredr1=Color(0xffFF7A00);
 const Color profilerimgeboredr2=Color(0xffFFBC11);
 const Color profilerflag1=Color(0xffC2ADFF);
 const Color profilerflag2=Color(0xffFFC804);
-//
 
-const Color appSuccessShade=Color(0xffFFC804);
+
+//refer
+
+const Color refercard1=Color(0xff15A347);
+const Color refercard2=Color(0xffAEEE76);
+const Color appSuccessShade=Color(0xff3AF384);
+const Color appwhiteshade=Color(0xff8C7E91);
+const Color sharecard=Color(0xff9a7ea2);
+
+
