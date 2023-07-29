@@ -10,6 +10,7 @@ import 'CustomWidgets/TournmentCardwidget.dart';
 import 'CustomWidgets/WalletWidgets.dart';
 import 'Screens/Menu.dart';
 import 'Screens/Profile.dart';
+import 'Screens/ReferdPeople.dart';
 import 'Screens/TransactionHistory.dart';
 
 void main() {
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  Refer(),
+      home:  ReferedPeople(),
     );
   }
 }

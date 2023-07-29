@@ -38,5 +38,7 @@ const Color refercard2=Color(0xffAEEE76);
 const Color appSuccessShade=Color(0xff3AF384);
 const Color appwhiteshade=Color(0xff8C7E91);
 const Color sharecard=Color(0xff9a7ea2);
+const Color sharewhitetext=Color(0xffc2b6c6);
+
 
 
