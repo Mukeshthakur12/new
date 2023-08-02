@@ -10,7 +10,7 @@ const Color appColorGreen = Color(0xFF3AF384);
 const Color appColorGreen1 = Color(0xFF00D092);
 const Color containercolor = Color(0xFFFFFFFF);
 const Color appColorBlack = Color(0xFF000000);
-
+const Color appColorYellow = Color(0xFFFFCF23);
 
 const Color appTimeColor = Color(0xFF472751);
 const Color appCardColor = Color(0xFF300126);

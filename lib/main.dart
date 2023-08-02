@@ -1,17 +1,15 @@
 import 'package:development/CustomWidgets/ContesEntryCard.dart';
 import 'package:development/CustomWidgets/game_card.dart';
-import 'package:development/CustomWidgets/reward_custom_card.dart';
-import 'package:development/Screens/RaferandEarn.dart';
 import 'package:flutter/material.dart';
 
 import 'CustomWidgets/CustomSliceWidget.dart';
-import 'CustomWidgets/ReferAndEarn.dart';
-import 'CustomWidgets/TournmentCardwidget.dart';
 import 'CustomWidgets/WalletWidgets.dart';
-import 'Screens/Menu.dart';
-import 'Screens/Profile.dart';
+import 'Screens/Instruction.dart';
+import 'Screens/PaymentSucessfull.dart';
+import 'Screens/PriceBreakup.dart';
 import 'Screens/ReferdPeople.dart';
 import 'Screens/TransactionHistory.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +27,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  ReferedPeople(),
+      home:  Instruction(),
     );
   }
 }

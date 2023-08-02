@@ -69,64 +69,66 @@ class ReferedPeople extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Container(
-              width: MediaQuery.of(context).size.width - 3,
-              // Set the width to 80% of the screen width
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                color: appPrimaryColor,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(6.0),
-                child: Row(
-                  children: [
-                    Expanded(
-                      flex: 2,
-                      child: Row(
-                        children: [
-                          SvgPicture.asset(
-                            'assets/Refer/share.svg',
-                            width: 31,
-                            height: 32,
-                            // Replace with the path to your second image
-                            // Set the height of the image
+          ListView.builder(
+            shrinkWrap: true, // Added to allow the ListView to size itself based on its content
+            itemCount: 9, // Replace with the number of items you want to display
+            itemBuilder: (BuildContext context, int index) {
+              return Padding(
+                padding: const EdgeInsets.only(left:16.0,right: 16,top: 8),
+                child: Container(
+                  width: MediaQuery.of(context).size.width - 3,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    color: appPrimaryColor,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Row(
+                      children: [
+                        Expanded( // Changed from Expanded to Flexible
+                          flex: 2,
+                          child: Row(
+                            children: [
+                              SvgPicture.asset(
+                                'assets/Refer/share.svg',
+                                width: 31,
+                                height: 32,
+                              ),
+                              SizedBox(width: 5,),
+                              AppText(
+                                'User',
+                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                                textColor: sharewhitetext,
+                              ),
+                            ],
                           ),
-                          SizedBox(width: 5,),
-                          AppText(
-                            'User',
+                        ),
+                        SizedBox(width: 12,),
+                        Expanded( // Changed from Expanded to Flexible
+                          flex: 1,
+                          child: AppText(
+                            'Status',
                             style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
                             textColor: sharewhitetext,
                           ),
-                        ],
-                      ),
+                        ),
+                        SizedBox(width: 12,),
+                        Expanded( // Changed from Expanded to Flexible
+                          flex: 1,
+                          child: SvgPicture.asset(
+                            'assets/Refer/share.svg',
+                            width: 31,
+                            height: 32,
+                          ),
+                        ),
+                      ],
                     ),
-                    SizedBox(width: 12,),
-                    Expanded(
-                      flex: 1,
-                      child: AppText(
-                        'Status',
-                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
-                        textColor: sharewhitetext,
-                      ),
-                    ),
-                    SizedBox(width: 12,),
-                    Expanded(
-                      flex: 1,
-                      child: SvgPicture.asset(
-                        'assets/Refer/share.svg',
-                        width: 31,
-                        height: 32,
-                        // Replace with the path to your second image
-                        // Set the height of the image
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-            ),
+              );
+            },
           ),
+          SizedBox(height: 16,),
         ],
       ),
     );
