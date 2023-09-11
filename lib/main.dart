@@ -1,9 +1,14 @@
 import 'package:development/CustomWidgets/ContesEntryCard.dart';
 import 'package:development/CustomWidgets/game_card.dart';
 import 'package:development/CustomWidgets/reward_custom_card.dart';
+import 'package:development/Screens/CommonScreens/bottom_nav_bar.dart';
+import 'package:development/Utils/app_color.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'CustomWidgets/CustomSliceWidget.dart';
+import 'CustomWidgets/TournmentCardwidget.dart';
+import 'Screens/CommonScreens/splashcreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,58 +20,105 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final customFont = const TextStyle(fontFamily: 'CeraPro');
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
+        scaffoldBackgroundColor: appBgColor,
+        backgroundColor: appBgColor,
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-           GameButtonCard(imageUrl: 'assets/GameButton/image1.png', buttonText: 'True or False', onPressed: (){
-
-           }),
-            RewardCardWidget(imageUrl: 'imageUrl', title: 'title', description: 'description', initialDuration:  Duration(seconds: 5)),
-            CustomRewardWidget(
-              imageUrl: "assets/GameButton/reward.png",
-              title: 'Daily Games',
-              description: 'Rewards are available for premium users',
-              initialDuration: Duration(minutes: 10), // Set the initial duration here
+          textTheme: const TextTheme(
+            displayLarge: TextStyle(
+              fontFamily: 'CeraProBold',
             ),
-            ContestEntryCard(priceMoney: '30000',
-                timeRemaining: Duration(minutes: 10),
-                entriesLeft: 5,
-                totalEntries: 30,
-                entryMoney: 20,
-                onEntryButtonPressed: (){})
-          ],
-        ),
+            displayMedium: TextStyle(
+              fontFamily: 'CeraProMedium',
+            ),
+            displaySmall: TextStyle(
+              fontFamily: 'CeraProLight',
+            ),
+            headlineLarge: TextStyle(
+              fontFamily: 'CeraProBold',
+            ),
+            headlineMedium: TextStyle(
+              fontFamily: 'CeraProMedium',
+            ),
+            headlineSmall: TextStyle(
+              fontFamily: 'CeraProLight',
+            ),
+            titleLarge: TextStyle(
+              fontFamily: 'CeraProBold',
+            ),
+            titleMedium:TextStyle(
+              fontFamily: 'CeraProMedium',
+            ),
+            titleSmall: TextStyle(
+              fontFamily: 'CeraProLight',
+            ),
+            labelLarge: TextStyle(
+              fontFamily: 'CeraProBold',
+            ),
+            labelMedium:TextStyle(
+              fontFamily: 'CeraProMedium',
+            ),
+            labelSmall: TextStyle(
+              fontFamily: 'CeraProLight',
+            ),
+
+            bodyLarge: TextStyle(
+              fontFamily: 'CeraProBold',
+            ),
+            bodyMedium:TextStyle(
+              fontFamily: 'CeraProMedium',
+            ),
+            bodySmall: TextStyle(
+              fontFamily: 'CeraProLight',
+            ),
+            /*headline1: TextStyle(
+              fontFamily: 'CeraProBlack',
+              fontSize: 24,
+              fontWeight: FontWeight.w900,
+            ),
+            headline2: TextStyle(
+              fontFamily: 'CeraProBlacki',
+              fontStyle: FontStyle.italic,
+            ),
+            headline3: TextStyle(
+              fontFamily: 'CeraProBold',
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+            headline4: TextStyle(
+              fontFamily: 'CeraProLight',
+              fontSize: 18,
+              fontWeight: FontWeight.w300,
+            ),
+            headline5: TextStyle(
+              fontFamily: 'CeraProMedium',
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
+            headline6: TextStyle(
+              fontFamily: 'CeraProRegularItaclic',
+              fontSize: 14,
+              fontStyle: FontStyle.italic,
+            ),*/
+          ),
+
+          appBarTheme: AppBarTheme(
+          backgroundColor: appBgColor,
+          iconTheme: IconThemeData(
+            color: appColorWhite
+          )
+        )
       ),
 
+      home: SplashScreen(),
     );
   }
 }
+
+

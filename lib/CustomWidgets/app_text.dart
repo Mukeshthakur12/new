@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import '../Utils/app_color.dart';
-
 
 class AppText extends StatelessWidget {
   final String titleText;
@@ -9,6 +7,7 @@ class AppText extends StatelessWidget {
   final TextStyle? style;
   final int? maxLines;
   final TextOverflow? overflow;
+  final TextAlign? textAlign;
 
   const AppText.blue(
       this.titleText, {
@@ -17,16 +16,8 @@ class AppText extends StatelessWidget {
         this.style,
         this.maxLines,
         this.overflow,
+        this.textAlign,
       }) : super(key: key);
-
-  // const AppText.grey(
-  //     this.titleText, {
-  //       Key? key,
-  //       this.textColor = appColorWhite,
-  //       this.style,
-  //       this.maxLines,
-  //       this.overflow,
-  //     }) : super(key: key);
 
   const AppText.white(
       this.titleText, {
@@ -35,6 +26,7 @@ class AppText extends StatelessWidget {
         this.style,
         this.maxLines,
         this.overflow,
+        this.textAlign,
       }) : super(key: key);
 
   const AppText(
@@ -44,6 +36,7 @@ class AppText extends StatelessWidget {
         this.style,
         this.maxLines,
         this.overflow,
+        this.textAlign,
       }) : super(key: key);
 
   @override
@@ -54,6 +47,7 @@ class AppText extends StatelessWidget {
           TextStyle(color: textColor ?? appColorBlack),
       maxLines: maxLines,
       overflow: overflow,
+      textAlign: textAlign,
     );
   }
 }

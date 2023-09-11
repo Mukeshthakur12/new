@@ -5,6 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../Utils/functions.dart';
+
 class CustomRewardWidget extends StatefulWidget {
   final String imageUrl;
   final String title;
@@ -58,13 +60,14 @@ class _CustomRewardWidgetState extends State<CustomRewardWidget> {
     final screenWidth = MediaQuery.of(context).size.width;
     final containerwidth = screenWidth * 0.50;
     final rcardwidth = screenWidth * 0.96;
+    var th = Theme.of(context).textTheme;
     return  Container(
         height: 89,
         decoration: BoxDecoration(
-            color: appCardColor,
+            color: notificatiocardbg,
           border: Border.all(
             width: 1,
-            color: appColorWhite
+            color: appRewardBorder
           ),
           borderRadius: BorderRadius.circular(16),
 
@@ -74,9 +77,9 @@ class _CustomRewardWidgetState extends State<CustomRewardWidget> {
         child: Stack(
           children: [
             Positioned(
-              left: -1,
-              top: -1,
-              bottom: -1,
+              left: 0,
+              top: 0,
+              bottom: 0,
               child: ClipPath(
                 clipper: SliceClipper(),
                 child: ClipRRect(
@@ -95,22 +98,24 @@ class _CustomRewardWidgetState extends State<CustomRewardWidget> {
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 90),
+              margin: EdgeInsets.only(left: 85),
               width: containerwidth,
               padding: EdgeInsets.symmetric(vertical: 11,horizontal: 4),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(
+                  AppText(
                     widget.title,
-                    style: TextStyle(color:appColorWhite,fontSize: 20, fontWeight: FontWeight.w900),
+                    style:th.titleLarge?.copyWith(fontSize: 20),
+                    textColor: appColorWhite,
                     textAlign: TextAlign.left,
                   ),
                   SizedBox(height: 2),
                   Expanded(
-                    child: Text(widget.description,
-                        style: TextStyle(color:appColorWhite,fontSize: 12, fontWeight: FontWeight.w500),
-                        textAlign: TextAlign.left,),
+                    child: AppText(widget.description,
+                      style:th.bodyMedium?.copyWith(fontSize: 12,fontWeight: FontWeight.w400),
+                      textColor: appColorWhite,
+                      textAlign: TextAlign.left,),
                   ),
                 ],
               ),
@@ -126,11 +131,11 @@ class _CustomRewardWidgetState extends State<CustomRewardWidget> {
 
             // Get button
             Positioned(
-              bottom: 16,
+              bottom: 12,
               right: 16,
               child: _isTimeUp?
-              InkWell(onTap: (){}, child: Text('Claim Now',style:
-                TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: appColorGreen),
+              InkWell(onTap: (){}, child: AppText('Claim Now',style:th.bodyMedium?.copyWith(),
+                textColor: appSuccessShade,
               )):
               InkWell(
                 onTap: () {
@@ -138,12 +143,12 @@ class _CustomRewardWidgetState extends State<CustomRewardWidget> {
                 },
                 child: Row(
                   children: [
-                    Text('Get',style:
-                    TextStyle(color:appColorWhite,
-                        fontSize: 14,fontWeight: FontWeight.w600)
-                        ,),
+                    AppText('View',
+                      style:th.bodyMedium?.copyWith(fontSize: 12),
+                      textColor: appColorWhite,
+                    ),
                     Padding(
-                        padding: EdgeInsets.only(top: 2,left: 2),
+                        padding: EdgeInsets.only(top: 2,left: 4),
                         child: Icon(CupertinoIcons.chevron_right_circle,color:appColorWhite,size: 14,))
                   ],
                 ),
@@ -155,10 +160,11 @@ class _CustomRewardWidgetState extends State<CustomRewardWidget> {
   }
 
   Widget _buildTimerContainer() {
+    var th = Theme.of(context).textTheme;
     return ClipPath(
       clipper: SliceClipper1(),
       child: Container(
-        width: 127,
+        width: 107,
         decoration: BoxDecoration(
           color: appTimeColor,
           borderRadius: BorderRadius.only(
@@ -170,13 +176,13 @@ class _CustomRewardWidgetState extends State<CustomRewardWidget> {
         ),
         padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment:MainAxisAlignment.center,
           children: [
-            AppText('End in',style: TextStyle(
-                fontWeight: FontWeight.w500,fontSize: 10),textColor: appLabelColor,),
+            AppText('End in',style:th.bodyMedium?.copyWith(fontSize: 14),textColor: appLabelColor,),
             Center(
-              child: Text(
-                '${_remainingDuration.inMinutes}:${(_remainingDuration.inSeconds % 60).toString().padLeft(2, '0')}',
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              child: Text(formattedDuration(_remainingDuration),
+                style: TextStyle(color: Colors.white, fontSize: 12,fontWeight: FontWeight.bold),
               ),
             ),
           ],
@@ -193,6 +199,9 @@ class _CustomRewardWidgetState extends State<CustomRewardWidget> {
       decoration: BoxDecoration(
         color: Colors.red,
         shape: BoxShape.circle,
+        border:Border.all(
+          color: Colors.white
+        )
       ),
     );
   }
